@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Ip-modal</title>
+
+    <script type="module" src="/build/ip-modal.esm.js"></script>
+    <script nomodule src="/build/ip-modal.js"></script>
+
+    <style>
+      .dialog-content img {
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <ip-modal>
+      <div slot="ip-modal-button" id="ip-modal-button">
+        <button>Open Modal</button>
+      </div>
+
+      <div slot="ip-modal-content">
+        <div class="dialog-content">
+          <img src="./assets/images/tab-img-1.png" alt="" />
+        </div>
+      </div>
+    </ip-modal>
+  </body>
+</html>

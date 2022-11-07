@@ -48,7 +48,7 @@ export class IpModal {
           <slot name="ip-modal-content"></slot>
 
           <button part="close-btn" onClick={this.closeModal.bind(this)}>
-            {this.closeButton ? this.closeButton : '+'}
+            {this.closeButton ? this.closeButton : ''}
           </button>
         </div>
 

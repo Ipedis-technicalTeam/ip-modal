@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: column;
     opacity: 0;
-    padding: 20px;
+    padding: 1vmax;
     transition: all 0.3s ease-out;
 
     &-show {
@@ -29,17 +29,38 @@
       font-size: 50px;
       inset-block-start: 0;
       inset-inline-end: 0;
-      transform: translate(30%, -30%) rotate(-45deg);
+      transform: translate(30%, -30%);
       background-color: #fff;
-      height: 50px;
-      width: 50px;
+      block-size: 50px;
+      inline-size: 50px;
       border-radius: 50%;
       box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
       z-index: 999;
 
+      &::before {
+        content: '+';
+        font-size: inherit;
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        block-size: fit-content;
+        inline-size: fit-content;
+        transform: translateX(10%) rotate(45deg);
+      }
+
       &:focus,
       &:focus-visible {
         outline: -webkit-focus-ring-color auto 1px;
+      }
+    }
+
+    @media only screen and (max-width: 767px) and (orientation: portrait), only screen and (max-width: 992px) and (orientation: landscape) {
+      width: auto;
+
+      button {
+        font-size: 20px;
+        inline-size: 30px;
+        block-size: 30px;
       }
     }
   }
